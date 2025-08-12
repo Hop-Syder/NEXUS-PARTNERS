@@ -1,34 +1,325 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Import des polices Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* Variables CSS pour la charte graphique */
+:root {
+  --nexus-blue: #004AAD;
+  --nexus-gold: #FFD700;
+  --nexus-black: #000000;
+  --nexus-white: #FFFFFF;
+  --nexus-gray: #F8F9FA;
+  --nexus-dark-gray: #6C757D;
+  
+  /* Ombres et effets */
+  --shadow-sm: 0 2px 4px rgba(0, 74, 173, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 74, 173, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 74, 173, 0.2);
+  --shadow-xl: 0 12px 48px rgba(0, 74, 173, 0.25);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Configuration de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+body {
+  font-family: 'Poppins', 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: var(--nexus-black);
+  overflow-x: hidden;
 }
 
-.App-link {
-    color: #61dafb;
+.App {
+  min-height: 100vh;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Classes utilitaires pour les couleurs */
+.text-nexus-blue { color: var(--nexus-blue); }
+.text-nexus-gold { color: var(--nexus-gold); }
+.text-nexus-black { color: var(--nexus-black); }
+.bg-nexus-blue { background-color: var(--nexus-blue); }
+.bg-nexus-gold { background-color: var(--nexus-gold); }
+.bg-nexus-black { background-color: var(--nexus-black); }
+
+/* Effets de glassmorphism */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--nexus-gold);
+}
+
+/* Boutons avec effets */
+.neon-button {
+  background: linear-gradient(135deg, var(--nexus-blue) 0%, #0056CC 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 20px rgba(0, 74, 173, 0.3),
+    0 4px 12px rgba(0, 74, 173, 0.2);
+}
+
+.neon-button:hover {
+  background: linear-gradient(135deg, #0056CC 0%, var(--nexus-blue) 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 30px rgba(0, 74, 173, 0.5),
+    0 8px 24px rgba(0, 74, 173, 0.3);
+  color: white;
+}
+
+.glass-button {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  border: 2px solid var(--nexus-blue);
+  color: var(--nexus-blue);
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.glass-button:hover {
+  background: var(--nexus-blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Effet ripple pour les boutons */
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-effect::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.ripple-effect:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Animations de texte */
+.neon-text {
+  text-shadow: 
+    0 0 10px var(--nexus-gold),
+    0 0 20px var(--nexus-gold),
+    0 0 30px var(--nexus-gold);
+  animation: neon-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 
+      0 0 10px var(--nexus-gold),
+      0 0 20px var(--nexus-gold),
+      0 0 30px var(--nexus-gold);
+  }
+  to {
+    text-shadow: 
+      0 0 20px var(--nexus-gold),
+      0 0 30px var(--nexus-gold),
+      0 0 40px var(--nexus-gold);
+  }
+}
+
+/* Animation de typing */
+.blinking-cursor {
+  animation: blink 1s infinite;
+  color: var(--nexus-gold);
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Animations de survol */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Éléments flottants pour le fond */
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Gradients pour les sections */
+.hero-gradient {
+  background: linear-gradient(135deg, 
+    rgba(248, 249, 250, 1) 0%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(248, 249, 250, 1) 100%);
+}
+
+/* Animation pour les compteurs */
+.counter-animation {
+  animation: countUp 2s ease-out forwards;
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards de services */
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+  animation: shimmer 1.5s ease-in-out;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .neon-text {
+    font-size: 2.5rem;
+  }
+  
+  .glass-card {
+    backdrop-filter: blur(12px);
+  }
+  
+  .floating-element {
+    display: none;
+  }
+}
+
+/* Effets de parallax */
+.parallax-element {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* Styles pour les formulaires */
+.form-input {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(0, 74, 173, 0.2);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: var(--nexus-blue);
+  box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+  background: white;
+}
+
+/* Styles pour la navigation */
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--nexus-gold);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+  width: 100%;
+}
+
+/* Animation d'apparition */
+.fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Effet de grain subtil */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
