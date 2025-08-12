@@ -67,7 +67,7 @@ export const ThemeProvider = ({ children }) => {
 
   // Éviter le flash pendant l'hydratation
   if (!mounted) {
-    return <div style={{ visibility: 'hidden' }}>{children}</div>;
+    return null;
   }
 
   return (
