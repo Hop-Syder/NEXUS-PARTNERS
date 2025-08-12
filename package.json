@@ -1,0 +1,32 @@
+{
+  "name": "nexus-partners-website",
+  "version": "1.0.0",
+  "description": "Site web premium pour Nexus Partners - Mise en relation stratégique",
+  "author": "@HopSyder",
+  "license": "MIT",
+  "homepage": ".",
+  "scripts": {
+    "dev": "cd frontend && yarn start",
+    "build": "cd frontend && yarn build",
+    "install-deps": "cd frontend && yarn install",
+    "preview": "cd frontend && serve -s build",
+    "deploy": "cd frontend && yarn build && echo 'Build terminé! Dossier: frontend/build/'"
+  },
+  "keywords": [
+    "nexus-partners",
+    "react",
+    "website",
+    "premium",
+    "responsive",
+    "accessibility",
+    "dark-mode"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/nexus-partners"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  }
+}
