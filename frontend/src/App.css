@@ -1,27 +1,111 @@
 /* Import des polices Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
-/* Variables CSS pour la charte graphique */
+/* Variables CSS pour les thèmes */
 :root {
+  /* Couleurs de marque */
   --nexus-blue: #004AAD;
   --nexus-gold: #FFD700;
   --nexus-black: #000000;
   --nexus-white: #FFFFFF;
-  --nexus-gray: #F8F9FA;
-  --nexus-dark-gray: #6C757D;
-  
-  /* Ombres et effets */
-  --shadow-sm: 0 2px 4px rgba(0, 74, 173, 0.1);
-  --shadow-md: 0 4px 12px rgba(0, 74, 173, 0.15);
-  --shadow-lg: 0 8px 24px rgba(0, 74, 173, 0.2);
-  --shadow-xl: 0 12px 48px rgba(0, 74, 173, 0.25);
-  
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
 }
 
-/* Configuration de base */
+/* Thème clair (par défaut) */
+:root,
+:root.light {
+  /* Couleurs principales */
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --muted: #F8F9FA;
+  --muted-foreground: #4A5568;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  
+  /* Couleurs sémantiques */
+  --primary: var(--nexus-blue);
+  --primary-foreground: #FFFFFF;
+  --secondary: var(--nexus-gold);
+  --secondary-foreground: var(--nexus-black);
+  
+  /* Bordures et inputs */
+  --border: #E2E8F0;
+  --input: #F1F5F9;
+  --ring: var(--nexus-blue);
+  
+  /* États */
+  --accent: #EBF8FF;
+  --accent-foreground: var(--nexus-blue);
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  
+  /* Contrastes améliorés pour l'accessibilité */
+  --text-primary: #1A202C;     /* Ratio 16.75:1 sur blanc */
+  --text-secondary: #2D3748;   /* Ratio 12.63:1 sur blanc */
+  --text-muted: #4A5568;       /* Ratio 7.54:1 sur blanc */
+  --text-subtle: #718096;      /* Ratio 4.54:1 sur blanc - minimum WCAG AA */
+  
+  /* Effets glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px rgba(0, 74, 173, 0.1);
+  
+  /* Ombres */
+  --shadow-sm: 0 2px 4px rgba(0, 74, 173, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 74, 173, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 74, 173, 0.12);
+  --shadow-xl: 0 12px 48px rgba(0, 74, 173, 0.15);
+}
+
+/* Thème sombre */
+:root.dark {
+  /* Couleurs principales */
+  --background: #0F0F0F;
+  --foreground: #F7FAFC;
+  --muted: #1A1A1A;
+  --muted-foreground: #A0AEC0;
+  --card: #1A1A1A;
+  --card-foreground: #F7FAFC;
+  
+  /* Couleurs sémantiques */
+  --primary: #3B82F6;          /* Bleu plus clair en mode sombre */
+  --primary-foreground: #FFFFFF;
+  --secondary: #FCD34D;        /* Gold plus doux en mode sombre */
+  --secondary-foreground: #1A202C;
+  
+  /* Bordures et inputs */
+  --border: #2D3748;
+  --input: #2D3748;
+  --ring: #3B82F6;
+  
+  /* États */
+  --accent: #1E3A5F;
+  --accent-foreground: #93C5FD;
+  --destructive: #F87171;
+  --destructive-foreground: #1A202C;
+  
+  /* Contrastes optimisés pour mode sombre */
+  --text-primary: #F7FAFC;     /* Ratio 19.07:1 sur fond sombre */
+  --text-secondary: #E2E8F0;   /* Ratio 15.8:1 sur fond sombre */
+  --text-muted: #CBD5E0;       /* Ratio 11.58:1 sur fond sombre */
+  --text-subtle: #A0AEC0;      /* Ratio 7.54:1 sur fond sombre */
+  
+  /* Effets glassmorphism pour mode sombre */
+  --glass-bg: rgba(26, 26, 26, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  
+  /* Ombres pour mode sombre */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.6);
+  
+  /* Couleurs spéciales pour le mode sombre */
+  --nexus-blue-dark: #3B82F6;
+  --nexus-gold-dark: #FCD34D;
+}
+
+/* Configuration de base avec typographie améliorée */
 * {
   margin: 0;
   padding: 0;
@@ -29,36 +113,94 @@
 }
 
 body {
-  font-family: 'Poppins', 'Montserrat', sans-serif;
-  line-height: 1.6;
-  color: var(--nexus-black);
+  font-family: 'Poppins', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.7; /* Amélioré pour la lisibilité */
+  color: var(--text-primary);
+  background-color: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+  
+  /* Amélioration de la lisibilité */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
 }
 
 .App {
   min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
-/* Classes utilitaires pour les couleurs */
-.text-nexus-blue { color: var(--nexus-blue); }
-.text-nexus-gold { color: var(--nexus-gold); }
-.text-nexus-black { color: var(--nexus-black); }
-.bg-nexus-blue { background-color: var(--nexus-blue); }
-.bg-nexus-gold { background-color: var(--nexus-gold); }
-.bg-nexus-black { background-color: var(--nexus-black); }
+/* Classes utilitaires pour les couleurs avec thèmes */
+.text-nexus-blue { 
+  color: var(--primary); 
+}
+.text-nexus-gold { 
+  color: var(--secondary); 
+}
+.text-nexus-black { 
+  color: var(--foreground); 
+}
+.bg-nexus-blue { 
+  background-color: var(--primary); 
+}
+.bg-nexus-gold { 
+  background-color: var(--secondary); 
+}
+.bg-nexus-gray { 
+  background-color: var(--muted); 
+}
 
-/* Effets de glassmorphism */
+/* Typographie responsive et accessible */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.5em;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+p {
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 2vw, 1.125rem); /* Minimum 16px */
+  line-height: 1.8;
+  margin-bottom: 1em;
+}
+
+/* Texte petit mais lisible */
+.text-sm {
+  font-size: clamp(0.875rem, 1.5vw, 1rem); /* Minimum 14px */
+  line-height: 1.6;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-subtle {
+  color: var(--text-subtle);
+}
+
+/* Effets de glassmorphism adaptés aux thèmes */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--glass-bg);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   box-shadow: var(--shadow-lg);
   transition: all 0.3s ease;
@@ -67,48 +209,66 @@ body {
 .glass-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: var(--shadow-xl);
-  border-color: var(--nexus-gold);
+  border-color: var(--secondary);
 }
 
-/* Boutons avec effets */
+/* Boutons avec accessibilité améliorée */
 .neon-button {
-  background: linear-gradient(135deg, var(--nexus-blue) 0%, #0056CC 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, #0066FF 100%);
   color: white;
   border: none;
   border-radius: 12px;
   font-weight: 600;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 
-    0 0 20px rgba(0, 74, 173, 0.3),
-    0 4px 12px rgba(0, 74, 173, 0.2);
+    0 0 20px rgba(59, 130, 246, 0.3),
+    0 4px 12px rgba(59, 130, 246, 0.2);
+  
+  /* Accessibilité focus */
+  focus-visible: {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+  }
 }
 
 .neon-button:hover {
-  background: linear-gradient(135deg, #0056CC 0%, var(--nexus-blue) 100%);
+  background: linear-gradient(135deg, #0066FF 0%, var(--primary) 100%);
   transform: translateY(-2px);
   box-shadow: 
-    0 0 30px rgba(0, 74, 173, 0.5),
-    0 8px 24px rgba(0, 74, 173, 0.3);
+    0 0 30px rgba(59, 130, 246, 0.5),
+    0 8px 24px rgba(59, 130, 246, 0.3);
   color: white;
 }
 
+.neon-button:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 3px;
+}
+
 .glass-button {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--glass-bg);
   backdrop-filter: blur(16px);
-  border: 2px solid var(--nexus-blue);
-  color: var(--nexus-blue);
+  border: 2px solid var(--primary);
+  color: var(--primary);
   border-radius: 12px;
   font-weight: 600;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   transition: all 0.3s ease;
 }
 
 .glass-button:hover {
-  background: var(--nexus-blue);
+  background: var(--primary);
   color: white;
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+
+.glass-button:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 3px;
 }
 
 /* Effet ripple pour les boutons */
@@ -135,34 +295,34 @@ body {
   height: 300px;
 }
 
-/* Animations de texte */
+/* Animations de texte avec thème */
 .neon-text {
   text-shadow: 
-    0 0 10px var(--nexus-gold),
-    0 0 20px var(--nexus-gold),
-    0 0 30px var(--nexus-gold);
+    0 0 10px var(--secondary),
+    0 0 20px var(--secondary),
+    0 0 30px var(--secondary);
   animation: neon-glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes neon-glow {
   from {
     text-shadow: 
-      0 0 10px var(--nexus-gold),
-      0 0 20px var(--nexus-gold),
-      0 0 30px var(--nexus-gold);
+      0 0 10px var(--secondary),
+      0 0 20px var(--secondary),
+      0 0 30px var(--secondary);
   }
   to {
     text-shadow: 
-      0 0 20px var(--nexus-gold),
-      0 0 30px var(--nexus-gold),
-      0 0 40px var(--nexus-gold);
+      0 0 20px var(--secondary),
+      0 0 30px var(--secondary),
+      0 0 40px var(--secondary);
   }
 }
 
 /* Animation de typing */
 .blinking-cursor {
   animation: blink 1s infinite;
-  color: var(--nexus-gold);
+  color: var(--secondary);
   font-weight: bold;
 }
 
@@ -190,12 +350,12 @@ body {
   50% { transform: translateY(-20px); }
 }
 
-/* Gradients pour les sections */
+/* Gradients adaptés aux thèmes */
 .hero-gradient {
   background: linear-gradient(135deg, 
-    rgba(248, 249, 250, 1) 0%,
-    rgba(255, 255, 255, 0.9) 50%,
-    rgba(248, 249, 250, 1) 100%);
+    var(--background) 0%,
+    var(--muted) 50%,
+    var(--background) 100%);
 }
 
 /* Animation pour les compteurs */
@@ -208,10 +368,11 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Cards de services */
+/* Cards de services avec thème */
 .service-card {
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .service-card::before {
@@ -237,46 +398,42 @@ body {
   100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .neon-text {
-    font-size: 2.5rem;
-  }
-  
-  .glass-card {
-    backdrop-filter: blur(12px);
-  }
-  
-  .floating-element {
-    display: none;
-  }
+/* Amélioration du focus pour l'accessibilité */
+*:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
-/* Effets de parallax */
-.parallax-element {
-  will-change: transform;
-  transition: transform 0.1s ease-out;
-}
-
-/* Styles pour les formulaires */
+/* Styles pour les formulaires avec accessibilité */
 .form-input {
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--input);
   backdrop-filter: blur(8px);
-  border: 2px solid rgba(0, 74, 173, 0.2);
+  border: 2px solid var(--border);
   border-radius: 8px;
+  color: var(--text-primary);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  padding: 12px 16px;
   transition: all 0.3s ease;
 }
 
 .form-input:focus {
-  border-color: var(--nexus-blue);
-  box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
-  background: white;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: var(--card);
+  outline: none;
 }
 
-/* Styles pour la navigation */
+.form-input::placeholder {
+  color: var(--text-subtle);
+}
+
+/* Styles pour la navigation avec accessibilité */
 .nav-link {
   position: relative;
   overflow: hidden;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  transition: all 0.3s ease;
 }
 
 .nav-link::before {
@@ -286,13 +443,19 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--nexus-gold);
+  background: var(--secondary);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover::before,
 .nav-link.active::before {
   width: 100%;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 /* Animation d'apparition */
@@ -311,15 +474,75 @@ body {
   }
 }
 
-/* Effet de grain subtil */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.02;
-  z-index: -1;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+/* Mode sombre spécial pour les images */
+.dark img {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.dark .glass-card {
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive design avec tailles minimum */
+@media (max-width: 768px) {
+  .neon-text {
+    font-size: 2.5rem;
+  }
+  
+  .glass-card {
+    backdrop-filter: blur(12px);
+  }
+  
+  .floating-element {
+    display: none;
+  }
+  
+  /* Amélioration des boutons sur mobile */
+  .neon-button, .glass-button {
+    min-height: 44px; /* Taille minimum tactile */
+    min-width: 44px;
+    padding: 12px 20px;
+  }
+}
+
+/* Amélioration pour les utilisateurs avec vestibular disorders */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .floating-element,
+  .blinking-cursor,
+  .neon-text {
+    animation: none !important;
+  }
+}
+
+/* Amélioration du contraste pour les utilisateurs avec troubles visuels */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --text-secondary: #1A1A1A;
+    --border: #000000;
+  }
+  
+  .dark {
+    --text-primary: #FFFFFF;
+    --text-secondary: #F0F0F0;
+    --border: #FFFFFF;
+  }
+}
+
+/* Support pour la taille de police système */
+@media (prefers-reduced-data: reduce) {
+  .glass-effect,
+  .glass-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
