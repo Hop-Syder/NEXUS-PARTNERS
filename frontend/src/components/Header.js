@@ -37,20 +37,20 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - NOUVELLE PALETTE JAUNE/NOIR */}
           <Link 
             to="/" 
-            className="flex items-center space-x-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-lg p-1"
+            className="flex items-center space-x-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg p-1"
             aria-label="Nexus Partners - Retour à l'accueil"
           >
             <div className={`
               w-10 h-10 rounded-lg flex items-center justify-center 
-              font-bold text-white text-xl transform 
+              font-bold text-xl transform 
               group-hover:scale-105 group-focus:scale-105 
               transition-transform duration-200
               ${theme === 'dark' 
-                ? 'bg-gradient-to-r from-blue-500 to-yellow-400' 
-                : 'bg-gradient-to-r from-nexus-blue to-nexus-gold'
+                ? 'bg-gradient-to-r from-yellow-400 to-yellow-300 text-black' 
+                : 'bg-gradient-to-r from-yellow-500 to-yellow-400 text-black'
               }
             `}>
               N
@@ -58,15 +58,15 @@ const Header = () => {
             <span className={`
               text-2xl font-bold transition-colors duration-300
               ${theme === 'dark' 
-                ? 'text-blue-400 group-hover:text-yellow-400' 
-                : 'text-nexus-blue group-hover:text-nexus-gold'
+                ? 'text-white group-hover:text-yellow-300' 
+                : 'text-black group-hover:text-yellow-600'
               }
             `}>
               Nexus Partners
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - TEXTES NOIR/BLANC */}
           <nav className="hidden md:flex items-center space-x-1" role="navigation" aria-label="Navigation principale">
             {navigation.map((item) => (
               <Link
@@ -75,14 +75,12 @@ const Header = () => {
                 className={`
                   nav-link relative px-4 py-2 text-sm font-medium 
                   transition-all duration-300 rounded-lg
-                  focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary
+                  focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
                   ${location.pathname === item.href
-                    ? theme === 'dark' 
-                      ? 'text-yellow-400' 
-                      : 'text-nexus-gold'
+                    ? 'text-yellow-500 font-semibold'
                     : theme === 'dark'
-                      ? 'text-gray-300 hover:text-blue-400'
-                      : 'text-gray-700 hover:text-nexus-blue'
+                      ? 'text-white hover:text-yellow-300'
+                      : 'text-black hover:text-yellow-600'
                   }
                 `}
                 aria-current={location.pathname === item.href ? 'page' : undefined}
@@ -111,10 +109,10 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`
                 p-2 rounded-lg transition-colors duration-200
-                focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary
+                focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
                 ${theme === 'dark'
-                  ? 'hover:bg-gray-800 text-gray-300'
-                  : 'hover:bg-gray-100 text-gray-700'
+                  ? 'hover:bg-gray-800 text-white'
+                  : 'hover:bg-gray-100 text-black'
                 }
               `}
               aria-expanded={isMobileMenuOpen}
@@ -140,14 +138,12 @@ const Header = () => {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`
                     px-4 py-3 text-sm font-medium transition-colors duration-300 rounded-lg mx-2
-                    focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary
+                    focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
                     ${location.pathname === item.href
-                      ? theme === 'dark'
-                        ? 'text-yellow-400 bg-blue-500/10'
-                        : 'text-nexus-gold bg-nexus-blue/10'
+                      ? 'text-yellow-500 bg-yellow-100 font-semibold'
                       : theme === 'dark'
-                        ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-800'
-                        : 'text-gray-700 hover:text-nexus-blue hover:bg-gray-50'
+                        ? 'text-white hover:text-yellow-300 hover:bg-gray-800'
+                        : 'text-black hover:text-yellow-600 hover:bg-gray-50'
                     }
                   `}
                   aria-current={location.pathname === item.href ? 'page' : undefined}

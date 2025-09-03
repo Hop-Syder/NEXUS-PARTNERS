@@ -1,108 +1,107 @@
 /* Import des polices Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
-/* Variables CSS pour les thèmes */
+/* Variables CSS pour les thèmes - NOUVELLE CHARTE JAUNE/BLANC/NOIR */
 :root {
-  /* Couleurs de marque */
-  --nexus-blue: #004AAD;
-  --nexus-gold: #FFD700;
-  --nexus-black: #000000;
-  --nexus-white: #FFFFFF;
+  /* Couleurs de marque - NOUVELLE PALETTE */
+  --nexus-yellow: #FFD700;      /* Jaune dominant */
+  --nexus-yellow-bright: #FFF200; /* Jaune vif */
+  --nexus-yellow-dark: #E6C200;   /* Jaune foncé */
+  --nexus-black: #000000;      /* Noir pur */
+  --nexus-white: #FFFFFF;      /* Blanc pur */
+  --nexus-gray-dark: #1A1A1A;  /* Gris très foncé */
+  --nexus-gray-light: #F5F5F5; /* Gris très clair */
 }
 
-/* Thème clair (par défaut) */
+/* Thème clair (par défaut) - JAUNE DOMINANT */
 :root,
 :root.light {
   /* Couleurs principales */
   --background: #FFFFFF;
-  --foreground: #1A1A1A;
-  --muted: #F8F9FA;
-  --muted-foreground: #4A5568;
+  --foreground: #000000;
+  --muted: #F8F8F8;
+  --muted-foreground: #1A1A1A;
   --card: #FFFFFF;
-  --card-foreground: #1A1A1A;
+  --card-foreground: #000000;
   
-  /* Couleurs sémantiques */
-  --primary: var(--nexus-blue);
-  --primary-foreground: #FFFFFF;
-  --secondary: var(--nexus-gold);
-  --secondary-foreground: var(--nexus-black);
+  /* Couleurs sémantiques - JAUNE PRINCIPAL */
+  --primary: #FFD700;           /* Jaune comme couleur principale */
+  --primary-foreground: #000000; /* Texte noir sur jaune */
+  --secondary: #000000;         /* Noir comme secondaire */
+  --secondary-foreground: #FFFFFF; /* Texte blanc sur noir */
   
   /* Bordures et inputs */
-  --border: #E2E8F0;
-  --input: #F1F5F9;
-  --ring: var(--nexus-blue);
+  --border: #E0E0E0;
+  --input: #F9F9F9;
+  --ring: #FFD700;
   
   /* États */
-  --accent: #EBF8FF;
-  --accent-foreground: var(--nexus-blue);
+  --accent: #FFF9C4;            /* Jaune très clair pour accents */
+  --accent-foreground: #1A1A1A;
   --destructive: #DC2626;
   --destructive-foreground: #FFFFFF;
   
-  /* Contrastes améliorés pour l'accessibilité */
-  --text-primary: #1A202C;     /* Ratio 16.75:1 sur blanc */
-  --text-secondary: #2D3748;   /* Ratio 12.63:1 sur blanc */
-  --text-muted: #4A5568;       /* Ratio 7.54:1 sur blanc */
-  --text-subtle: #718096;      /* Ratio 4.54:1 sur blanc - minimum WCAG AA */
+  /* Contrastes optimisés - NOIR SUR BLANC */
+  --text-primary: #000000;      /* Noir pur pour texte principal */
+  --text-secondary: #1A1A1A;    /* Noir légèrement gris */
+  --text-muted: #333333;        /* Gris foncé pour texte discret */
+  --text-subtle: #666666;       /* Gris moyen */
   
-  /* Effets glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --glass-shadow: 0 8px 32px rgba(0, 74, 173, 0.1);
+  /* Effets glassmorphism - TONS JAUNES */
+  --glass-bg: rgba(255, 215, 0, 0.1);
+  --glass-border: rgba(255, 215, 0, 0.3);
+  --glass-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
   
-  /* Ombres */
-  --shadow-sm: 0 2px 4px rgba(0, 74, 173, 0.05);
-  --shadow-md: 0 4px 12px rgba(0, 74, 173, 0.08);
-  --shadow-lg: 0 8px 24px rgba(0, 74, 173, 0.12);
-  --shadow-xl: 0 12px 48px rgba(0, 74, 173, 0.15);
+  /* Ombres - TONS JAUNES */
+  --shadow-sm: 0 2px 4px rgba(255, 215, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(255, 215, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(255, 215, 0, 0.2);
+  --shadow-xl: 0 12px 48px rgba(255, 215, 0, 0.25);
 }
 
-/* Thème sombre */
+/* Thème sombre - JAUNE SUR NOIR */
 :root.dark {
   /* Couleurs principales */
-  --background: #0F0F0F;
-  --foreground: #F7FAFC;
+  --background: #000000;
+  --foreground: #FFFFFF;
   --muted: #1A1A1A;
-  --muted-foreground: #A0AEC0;
-  --card: #1A1A1A;
-  --card-foreground: #F7FAFC;
+  --muted-foreground: #CCCCCC;
+  --card: #111111;
+  --card-foreground: #FFFFFF;
   
-  /* Couleurs sémantiques */
-  --primary: #3B82F6;          /* Bleu plus clair en mode sombre */
-  --primary-foreground: #FFFFFF;
-  --secondary: #FCD34D;        /* Gold plus doux en mode sombre */
-  --secondary-foreground: #1A202C;
+  /* Couleurs sémantiques - JAUNE BRILLANT SUR NOIR */
+  --primary: #FFF200;           /* Jaune plus vif en mode sombre */
+  --primary-foreground: #000000;
+  --secondary: #FFFFFF;         /* Blanc comme secondaire */
+  --secondary-foreground: #000000;
   
   /* Bordures et inputs */
-  --border: #2D3748;
-  --input: #2D3748;
-  --ring: #3B82F6;
+  --border: #333333;
+  --input: #1A1A1A;
+  --ring: #FFF200;
   
   /* États */
-  --accent: #1E3A5F;
-  --accent-foreground: #93C5FD;
-  --destructive: #F87171;
-  --destructive-foreground: #1A202C;
+  --accent: #2A2A00;            /* Jaune très sombre pour accents */
+  --accent-foreground: #FFF200;
+  --destructive: #FF4444;
+  --destructive-foreground: #000000;
   
-  /* Contrastes optimisés pour mode sombre */
-  --text-primary: #F7FAFC;     /* Ratio 19.07:1 sur fond sombre */
-  --text-secondary: #E2E8F0;   /* Ratio 15.8:1 sur fond sombre */
-  --text-muted: #CBD5E0;       /* Ratio 11.58:1 sur fond sombre */
-  --text-subtle: #A0AEC0;      /* Ratio 7.54:1 sur fond sombre */
+  /* Contrastes optimisés pour mode sombre - BLANC SUR NOIR */
+  --text-primary: #FFFFFF;      /* Blanc pur */
+  --text-secondary: #F0F0F0;    /* Blanc légèrement gris */
+  --text-muted: #CCCCCC;        /* Gris clair */
+  --text-subtle: #999999;       /* Gris moyen */
   
   /* Effets glassmorphism pour mode sombre */
-  --glass-bg: rgba(26, 26, 26, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(255, 242, 0, 0.1);
+  --glass-border: rgba(255, 242, 0, 0.2);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   
   /* Ombres pour mode sombre */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.6);
-  
-  /* Couleurs spéciales pour le mode sombre */
-  --nexus-blue-dark: #3B82F6;
-  --nexus-gold-dark: #FCD34D;
 }
 
 /* Configuration de base avec typographie améliorée */
@@ -114,7 +113,7 @@
 
 body {
   font-family: 'Poppins', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  line-height: 1.7; /* Amélioré pour la lisibilité */
+  line-height: 1.7;
   color: var(--text-primary);
   background-color: var(--background);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -132,21 +131,24 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Classes utilitaires pour les couleurs avec thèmes */
-.text-nexus-blue { 
+/* Classes utilitaires pour les couleurs - NOUVELLE PALETTE */
+.text-nexus-yellow { 
   color: var(--primary); 
 }
-.text-nexus-gold { 
-  color: var(--secondary); 
-}
 .text-nexus-black { 
-  color: var(--foreground); 
+  color: #000000; 
 }
-.bg-nexus-blue { 
+.text-nexus-white { 
+  color: #FFFFFF; 
+}
+.bg-nexus-yellow { 
   background-color: var(--primary); 
 }
-.bg-nexus-gold { 
-  background-color: var(--secondary); 
+.bg-nexus-black { 
+  background-color: #000000; 
+}
+.bg-nexus-white { 
+  background-color: #FFFFFF; 
 }
 .bg-nexus-gray { 
   background-color: var(--muted); 
@@ -167,14 +169,13 @@ h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
 
 p {
   color: var(--text-secondary);
-  font-size: clamp(1rem, 2vw, 1.125rem); /* Minimum 16px */
+  font-size: clamp(1rem, 2vw, 1.125rem);
   line-height: 1.8;
   margin-bottom: 1em;
 }
 
-/* Texte petit mais lisible */
 .text-sm {
-  font-size: clamp(0.875rem, 1.5vw, 1rem); /* Minimum 14px */
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   line-height: 1.6;
 }
 
@@ -186,7 +187,7 @@ p {
   color: var(--text-subtle);
 }
 
-/* Effets de glassmorphism adaptés aux thèmes */
+/* Effets de glassmorphism adaptés - TONS JAUNES */
 .glass-effect {
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
@@ -209,13 +210,13 @@ p {
 .glass-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: var(--shadow-xl);
-  border-color: var(--secondary);
+  border-color: var(--primary);
 }
 
-/* Boutons avec accessibilité améliorée */
+/* Boutons avec nouvelle palette JAUNE */
 .neon-button {
-  background: linear-gradient(135deg, var(--primary) 0%, #0066FF 100%);
-  color: white;
+  background: linear-gradient(135deg, #FFD700 0%, #FFF200 100%);
+  color: #000000;
   border: none;
   border-radius: 12px;
   font-weight: 600;
@@ -224,27 +225,21 @@ p {
   overflow: hidden;
   transition: all 0.3s ease;
   box-shadow: 
-    0 0 20px rgba(59, 130, 246, 0.3),
-    0 4px 12px rgba(59, 130, 246, 0.2);
-  
-  /* Accessibilité focus */
-  focus-visible: {
-    outline: 2px solid var(--secondary);
-    outline-offset: 2px;
-  }
+    0 0 20px rgba(255, 215, 0, 0.4),
+    0 4px 12px rgba(255, 215, 0, 0.3);
 }
 
 .neon-button:hover {
-  background: linear-gradient(135deg, #0066FF 0%, var(--primary) 100%);
+  background: linear-gradient(135deg, #FFF200 0%, #FFED4A 100%);
   transform: translateY(-2px);
   box-shadow: 
-    0 0 30px rgba(59, 130, 246, 0.5),
-    0 8px 24px rgba(59, 130, 246, 0.3);
-  color: white;
+    0 0 30px rgba(255, 215, 0, 0.6),
+    0 8px 24px rgba(255, 215, 0, 0.4);
+  color: #000000;
 }
 
 .neon-button:focus-visible {
-  outline: 3px solid var(--secondary);
+  outline: 3px solid #000000;
   outline-offset: 3px;
 }
 
@@ -252,7 +247,7 @@ p {
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
   border: 2px solid var(--primary);
-  color: var(--primary);
+  color: var(--text-primary);
   border-radius: 12px;
   font-weight: 600;
   font-size: clamp(0.875rem, 1.5vw, 1rem);
@@ -261,17 +256,17 @@ p {
 
 .glass-button:hover {
   background: var(--primary);
-  color: white;
+  color: #000000;
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
 
 .glass-button:focus-visible {
-  outline: 3px solid var(--secondary);
+  outline: 3px solid #000000;
   outline-offset: 3px;
 }
 
-/* Effet ripple pour les boutons */
+/* Effet ripple pour les boutons - JAUNE */
 .ripple-effect {
   position: relative;
   overflow: hidden;
@@ -285,7 +280,7 @@ p {
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 215, 0, 0.4);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
 }
@@ -295,34 +290,36 @@ p {
   height: 300px;
 }
 
-/* Animations de texte avec thème */
+/* Animations de texte - EFFET NEON JAUNE */
 .neon-text {
   text-shadow: 
-    0 0 10px var(--secondary),
-    0 0 20px var(--secondary),
-    0 0 30px var(--secondary);
-  animation: neon-glow 2s ease-in-out infinite alternate;
+    0 0 10px #FFD700,
+    0 0 20px #FFD700,
+    0 0 30px #FFD700,
+    0 0 40px #FFD700;
+  animation: neon-glow-yellow 2s ease-in-out infinite alternate;
 }
 
-@keyframes neon-glow {
+@keyframes neon-glow-yellow {
   from {
     text-shadow: 
-      0 0 10px var(--secondary),
-      0 0 20px var(--secondary),
-      0 0 30px var(--secondary);
+      0 0 10px #FFD700,
+      0 0 20px #FFD700,
+      0 0 30px #FFD700;
   }
   to {
     text-shadow: 
-      0 0 20px var(--secondary),
-      0 0 30px var(--secondary),
-      0 0 40px var(--secondary);
+      0 0 20px #FFF200,
+      0 0 30px #FFF200,
+      0 0 40px #FFF200,
+      0 0 50px #FFF200;
   }
 }
 
-/* Animation de typing */
+/* Animation de typing - CURSEUR JAUNE */
 .blinking-cursor {
   animation: blink 1s infinite;
-  color: var(--secondary);
+  color: var(--primary);
   font-weight: bold;
 }
 
@@ -340,7 +337,7 @@ p {
   transform: translateY(-8px) scale(1.02);
 }
 
-/* Éléments flottants pour le fond */
+/* Éléments flottants pour le fond - TONS JAUNES */
 .floating-element {
   animation: float 6s ease-in-out infinite;
 }
@@ -350,12 +347,27 @@ p {
   50% { transform: translateY(-20px); }
 }
 
-/* Gradients adaptés aux thèmes */
+/* Gradients adaptés aux thèmes - JAUNE/BLANC/NOIR */
 .hero-gradient {
   background: linear-gradient(135deg, 
     var(--background) 0%,
     var(--muted) 50%,
     var(--background) 100%);
+}
+
+/* Gradient spécial jaune pour sections importantes */
+.yellow-gradient {
+  background: linear-gradient(135deg, 
+    #FFD700 0%,
+    #FFF200 50%,
+    #FFED4A 100%);
+}
+
+.yellow-gradient-dark {
+  background: linear-gradient(135deg, 
+    #000000 0%,
+    #1A1A1A 50%,
+    #333333 100%);
 }
 
 /* Animation pour les compteurs */
@@ -368,7 +380,7 @@ p {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Cards de services avec thème */
+/* Cards de services avec thème JAUNE */
 .service-card {
   position: relative;
   overflow: hidden;
@@ -382,7 +394,7 @@ p {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.2), transparent);
   transform: rotate(45deg);
   transition: all 0.5s ease;
   opacity: 0;
@@ -390,22 +402,26 @@ p {
 
 .service-card:hover::before {
   opacity: 1;
-  animation: shimmer 1.5s ease-in-out;
+  animation: shimmer-yellow 1.5s ease-in-out;
 }
 
-@keyframes shimmer {
+@keyframes shimmer-yellow {
   0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
   100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
-/* Amélioration du focus pour l'accessibilité */
+/* Amélioration du focus - CONTOUR NOIR/JAUNE */
 *:focus-visible {
-  outline: 2px solid var(--secondary);
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Styles pour les formulaires avec accessibilité */
+.dark *:focus-visible {
+  outline: 2px solid #FFF200;
+}
+
+/* Styles pour les formulaires - JAUNE */
 .form-input {
   background: var(--input);
   backdrop-filter: blur(8px);
@@ -419,7 +435,7 @@ p {
 
 .form-input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
   background: var(--card);
   outline: none;
 }
@@ -428,7 +444,7 @@ p {
   color: var(--text-subtle);
 }
 
-/* Styles pour la navigation avec accessibilité */
+/* Styles pour la navigation - JAUNE */
 .nav-link {
   position: relative;
   overflow: hidden;
@@ -443,7 +459,7 @@ p {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--secondary);
+  background: var(--primary);
   transition: width 0.3s ease;
 }
 
@@ -453,7 +469,7 @@ p {
 }
 
 .nav-link:focus-visible {
-  outline: 2px solid var(--secondary);
+  outline: 2px solid var(--primary);
   outline-offset: 4px;
   border-radius: 4px;
 }
@@ -480,7 +496,7 @@ p {
 }
 
 .dark .glass-card {
-  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 242, 0, 0.1);
 }
 
 /* Responsive design avec tailles minimum */
@@ -499,7 +515,7 @@ p {
   
   /* Amélioration des boutons sur mobile */
   .neon-button, .glass-button {
-    min-height: 44px; /* Taille minimum tactile */
+    min-height: 44px;
     min-width: 44px;
     padding: 12px 20px;
   }
