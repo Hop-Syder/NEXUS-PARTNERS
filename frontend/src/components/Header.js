@@ -31,42 +31,31 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-effect py-4' : 'py-6'
-      }`}
+        isScrolled 
+          ? theme === 'dark' 
+            ? 'bg-black/90 backdrop-blur-md border-b border-gray-800' 
+            : 'bg-white/90 backdrop-blur-md border-b border-gray-200'
+          : 'bg-transparent'
+      } py-4`}
       role="banner"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between">
-          {/* Logo - NOUVELLE PALETTE JAUNE/NOIR */}
+          {/* Logo - JAUNE SUR FOND APPROPRIÉ */}
           <Link 
             to="/" 
             className="flex items-center space-x-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-lg p-1"
             aria-label="Nexus Partners - Retour à l'accueil"
           >
-            <div className={`
-              w-10 h-10 rounded-lg flex items-center justify-center 
-              font-bold text-xl transform 
-              group-hover:scale-105 group-focus:scale-105 
-              transition-transform duration-200
-              ${theme === 'dark' 
-                ? 'bg-gradient-to-r from-yellow-400 to-yellow-300 text-black' 
-                : 'bg-gradient-to-r from-yellow-500 to-yellow-400 text-black'
-              }
-            `}>
+            <div className="w-10 h-10 bg-yellow-500 rounded-lg flex items-center justify-center font-bold text-black text-xl transform group-hover:scale-105 group-focus:scale-105 transition-transform duration-200">
               N
             </div>
-            <span className={`
-              text-2xl font-bold transition-colors duration-300
-              ${theme === 'dark' 
-                ? 'text-white group-hover:text-yellow-300' 
-                : 'text-black group-hover:text-yellow-600'
-              }
-            `}>
+            <span className="text-2xl font-bold transition-colors duration-300 text-yellow-500 group-hover:text-yellow-600">
               Nexus Partners
             </span>
           </Link>
 
-          {/* Desktop Navigation - TEXTES NOIR/BLANC */}
+          {/* Desktop Navigation - TEXTES SELON MODE */}
           <nav className="hidden md:flex items-center space-x-1" role="navigation" aria-label="Navigation principale">
             {navigation.map((item) => (
               <Link
@@ -74,12 +63,12 @@ const Header = () => {
                 to={item.href}
                 className={`
                   nav-link relative px-4 py-2 text-sm font-medium 
-                  transition-all duration-300 rounded-lg
+                  transition-all duration-200 rounded-lg
                   focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
                   ${location.pathname === item.href
                     ? 'text-yellow-500 font-semibold'
                     : theme === 'dark'
-                      ? 'text-white hover:text-yellow-300'
+                      ? 'text-white hover:text-yellow-400'
                       : 'text-black hover:text-yellow-600'
                   }
                 `}
@@ -126,7 +115,13 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div 
-            className="md:hidden mt-4 py-4 glass-effect rounded-lg"
+            className={`
+              md:hidden mt-4 py-4 rounded-lg
+              ${theme === 'dark' 
+                ? 'bg-black/90 backdrop-blur-md border border-gray-800' 
+                : 'bg-white/90 backdrop-blur-md border border-gray-200'
+              }
+            `}
             role="navigation"
             aria-label="Navigation mobile"
           >
@@ -137,12 +132,12 @@ const Header = () => {
                   to={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`
-                    px-4 py-3 text-sm font-medium transition-colors duration-300 rounded-lg mx-2
+                    px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-lg mx-2
                     focus:outline-none focus-visible:ring-2 focus-visible:ring-primary
                     ${location.pathname === item.href
-                      ? 'text-yellow-500 bg-yellow-100 font-semibold'
+                      ? 'text-yellow-500 bg-yellow-50 font-semibold'
                       : theme === 'dark'
-                        ? 'text-white hover:text-yellow-300 hover:bg-gray-800'
+                        ? 'text-white hover:text-yellow-400 hover:bg-gray-800'
                         : 'text-black hover:text-yellow-600 hover:bg-gray-50'
                     }
                   `}

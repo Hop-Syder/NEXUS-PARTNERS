@@ -1,110 +1,100 @@
 /* Import des polices Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
-/* Variables CSS pour les thèmes - NOUVELLE CHARTE JAUNE/BLANC/NOIR */
+/* Variables CSS - CHARTE CLAIRE JAUNE/BLANC */
 :root {
-  /* Couleurs de marque - NOUVELLE PALETTE */
-  --nexus-yellow: #FFD700;      /* Jaune dominant */
-  --nexus-yellow-bright: #FFF200; /* Jaune vif */
-  --nexus-yellow-dark: #E6C200;   /* Jaune foncé */
-  --nexus-black: #000000;      /* Noir pur */
-  --nexus-white: #FFFFFF;      /* Blanc pur */
-  --nexus-gray-dark: #1A1A1A;  /* Gris très foncé */
-  --nexus-gray-light: #F5F5F5; /* Gris très clair */
+  /* Couleurs de marque */
+  --nexus-yellow: #FFD700;      /* Jaune pour titres et accents */
+  --nexus-white: #FFFFFF;       /* Blanc dominant */
+  --nexus-black: #000000;       /* Noir pour texte */
+  --nexus-gray-light: #F8F9FA;  /* Gris très clair */
+  --nexus-gray-medium: #6C757D; /* Gris moyen */
 }
 
-/* Thème clair (par défaut) - JAUNE DOMINANT */
+/* Mode clair - FOND BLANC, PARAGRAPHES NOIR, TITRES JAUNE */
 :root,
 :root.light {
   /* Couleurs principales */
-  --background: #FFFFFF;
-  --foreground: #000000;
-  --muted: #F8F8F8;
-  --muted-foreground: #1A1A1A;
-  --card: #FFFFFF;
-  --card-foreground: #000000;
+  --background: #FFFFFF;        /* Fond blanc */
+  --foreground: #000000;        /* Texte noir */
+  --muted: #F8F9FA;            /* Sections alternées */
+  --muted-foreground: #6C757D;  /* Texte secondaire */
+  --card: #FFFFFF;             /* Cards blanches */
+  --card-foreground: #000000;   /* Texte cards noir */
   
-  /* Couleurs sémantiques - JAUNE PRINCIPAL */
-  --primary: #FFD700;           /* Jaune comme couleur principale */
+  /* Couleurs sémantiques */
+  --primary: #FFD700;          /* Jaune pour boutons */
   --primary-foreground: #000000; /* Texte noir sur jaune */
-  --secondary: #000000;         /* Noir comme secondaire */
-  --secondary-foreground: #FFFFFF; /* Texte blanc sur noir */
+  --secondary: #F8F9FA;        /* Gris clair secondaire */
+  --secondary-foreground: #000000;
   
   /* Bordures et inputs */
-  --border: #E0E0E0;
-  --input: #F9F9F9;
+  --border: #E9ECEF;
+  --input: #F8F9FA;
   --ring: #FFD700;
   
   /* États */
-  --accent: #FFF9C4;            /* Jaune très clair pour accents */
-  --accent-foreground: #1A1A1A;
-  --destructive: #DC2626;
+  --accent: #FFF9C4;
+  --accent-foreground: #000000;
+  --destructive: #DC3545;
   --destructive-foreground: #FFFFFF;
   
-  /* Contrastes optimisés - NOIR SUR BLANC */
-  --text-primary: #000000;      /* Noir pur pour texte principal */
-  --text-secondary: #1A1A1A;    /* Noir légèrement gris */
-  --text-muted: #333333;        /* Gris foncé pour texte discret */
-  --text-subtle: #666666;       /* Gris moyen */
+  /* Hiérarchie de texte claire */
+  --text-heading: #FFD700;      /* TITRES EN JAUNE */
+  --text-primary: #000000;      /* PARAGRAPHES EN NOIR */
+  --text-secondary: #495057;    /* Texte secondaire */
+  --text-muted: #6C757D;        /* Texte discret */
+  --text-subtle: #ADB5BD;       /* Très discret */
   
-  /* Effets glassmorphism - TONS JAUNES */
-  --glass-bg: rgba(255, 215, 0, 0.1);
-  --glass-border: rgba(255, 215, 0, 0.3);
-  --glass-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
-  
-  /* Ombres - TONS JAUNES */
-  --shadow-sm: 0 2px 4px rgba(255, 215, 0, 0.1);
-  --shadow-md: 0 4px 12px rgba(255, 215, 0, 0.15);
-  --shadow-lg: 0 8px 24px rgba(255, 215, 0, 0.2);
-  --shadow-xl: 0 12px 48px rgba(255, 215, 0, 0.25);
+  /* Effets simplifiés sans subrillance */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Thème sombre - JAUNE SUR NOIR */
+/* Mode sombre - FOND NOIR, PARAGRAPHES BLANC, TITRES JAUNE */
 :root.dark {
   /* Couleurs principales */
-  --background: #000000;
-  --foreground: #FFFFFF;
-  --muted: #1A1A1A;
-  --muted-foreground: #CCCCCC;
-  --card: #111111;
-  --card-foreground: #FFFFFF;
+  --background: #000000;        /* Fond noir */
+  --foreground: #FFFFFF;        /* Texte blanc */
+  --muted: #111111;            /* Sections alternées sombres */
+  --muted-foreground: #ADB5BD;  /* Texte secondaire clair */
+  --card: #1A1A1A;             /* Cards sombres */
+  --card-foreground: #FFFFFF;   /* Texte cards blanc */
   
-  /* Couleurs sémantiques - JAUNE BRILLANT SUR NOIR */
-  --primary: #FFF200;           /* Jaune plus vif en mode sombre */
+  /* Couleurs sémantiques */
+  --primary: #FFD700;          /* Jaune reste identique */
   --primary-foreground: #000000;
-  --secondary: #FFFFFF;         /* Blanc comme secondaire */
-  --secondary-foreground: #000000;
+  --secondary: #333333;        /* Gris sombre secondaire */
+  --secondary-foreground: #FFFFFF;
   
   /* Bordures et inputs */
   --border: #333333;
   --input: #1A1A1A;
-  --ring: #FFF200;
+  --ring: #FFD700;
   
   /* États */
-  --accent: #2A2A00;            /* Jaune très sombre pour accents */
-  --accent-foreground: #FFF200;
+  --accent: #2D2D00;
+  --accent-foreground: #FFD700;
   --destructive: #FF4444;
   --destructive-foreground: #000000;
   
-  /* Contrastes optimisés pour mode sombre - BLANC SUR NOIR */
-  --text-primary: #FFFFFF;      /* Blanc pur */
-  --text-secondary: #F0F0F0;    /* Blanc légèrement gris */
-  --text-muted: #CCCCCC;        /* Gris clair */
-  --text-subtle: #999999;       /* Gris moyen */
-  
-  /* Effets glassmorphism pour mode sombre */
-  --glass-bg: rgba(255, 242, 0, 0.1);
-  --glass-border: rgba(255, 242, 0, 0.2);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  /* Hiérarchie de texte pour mode sombre */
+  --text-heading: #FFD700;      /* TITRES EN JAUNE */
+  --text-primary: #FFFFFF;      /* PARAGRAPHES EN BLANC */
+  --text-secondary: #E9ECEF;    /* Texte secondaire */
+  --text-muted: #ADB5BD;        /* Texte discret */
+  --text-subtle: #6C757D;       /* Très discret */
   
   /* Ombres pour mode sombre */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 12px 48px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.6);
 }
 
-/* Configuration de base avec typographie améliorée */
+/* Configuration de base */
 * {
   margin: 0;
   padding: 0;
@@ -113,7 +103,7 @@
 
 body {
   font-family: 'Poppins', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  line-height: 1.7;
+  line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--background);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -123,7 +113,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "kern" 1;
 }
 
 .App {
@@ -131,192 +120,132 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Classes utilitaires pour les couleurs - NOUVELLE PALETTE */
-.text-nexus-yellow { 
-  color: var(--primary); 
-}
-.text-nexus-black { 
-  color: #000000; 
-}
-.text-nexus-white { 
-  color: #FFFFFF; 
-}
-.bg-nexus-yellow { 
-  background-color: var(--primary); 
-}
-.bg-nexus-black { 
-  background-color: #000000; 
-}
-.bg-nexus-white { 
-  background-color: #FFFFFF; 
-}
-.bg-nexus-gray { 
-  background-color: var(--muted); 
-}
+/* Classes utilitaires pour les couleurs */
+.text-nexus-yellow { color: var(--nexus-yellow); }
+.text-nexus-black { color: #000000; }
+.text-nexus-white { color: #FFFFFF; }
+.bg-nexus-yellow { background-color: var(--nexus-yellow); }
+.bg-nexus-white { background-color: var(--nexus-white); }
+.bg-nexus-black { background-color: var(--nexus-black); }
+.bg-nexus-gray { background-color: var(--muted); }
 
-/* Typographie responsive et accessible */
+/* TYPOGRAPHIE HIÉRARCHIQUE CLAIRE */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text-primary);
+  color: var(--text-heading); /* TOUS LES TITRES EN JAUNE */
   font-weight: 600;
-  line-height: 1.4;
-  margin-bottom: 0.5em;
+  line-height: 1.3;
+  margin-bottom: 0.75em;
 }
 
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+h1 { 
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+}
+h2 { 
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+}
+h3 { 
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+}
+h4 { 
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+}
 
+/* PARAGRAPHES - NOIR EN MODE CLAIR, BLANC EN MODE SOMBRE */
 p {
-  color: var(--text-secondary);
+  color: var(--text-primary); /* Utilise la variable de texte principal */
   font-size: clamp(1rem, 2vw, 1.125rem);
-  line-height: 1.8;
-  margin-bottom: 1em;
+  line-height: 1.7;
+  margin-bottom: 1.2em;
+  font-weight: 400;
 }
 
 .text-sm {
   font-size: clamp(0.875rem, 1.5vw, 1rem);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .text-muted {
   color: var(--text-muted);
 }
 
+.text-secondary {
+  color: var(--text-secondary);
+}
+
 .text-subtle {
   color: var(--text-subtle);
 }
 
-/* Effets de glassmorphism adaptés - TONS JAUNES */
-.glass-effect {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
-}
-
-.glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--glass-border);
-  border-radius: 16px;
-  box-shadow: var(--shadow-lg);
-  transition: all 0.3s ease;
-}
-
-.glass-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--primary);
-}
-
-/* Boutons avec nouvelle palette JAUNE */
+/* BOUTONS SIMPLIFIÉS SANS SUBRILLANCE */
 .neon-button {
-  background: linear-gradient(135deg, #FFD700 0%, #FFF200 100%);
+  background: linear-gradient(135deg, #FFD700 0%, #FFC107 100%);
   color: #000000;
   border: none;
-  border-radius: 12px;
-  font-weight: 600;
+  border-radius: 8px;
+  font-weight: 500;
   font-size: clamp(0.875rem, 1.5vw, 1rem);
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 
-    0 0 20px rgba(255, 215, 0, 0.4),
-    0 4px 12px rgba(255, 215, 0, 0.3);
+  padding: 12px 24px;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-md);
 }
 
 .neon-button:hover {
-  background: linear-gradient(135deg, #FFF200 0%, #FFED4A 100%);
+  background: linear-gradient(135deg, #FFC107 0%, #FFB300 100%);
   transform: translateY(-2px);
-  box-shadow: 
-    0 0 30px rgba(255, 215, 0, 0.6),
-    0 8px 24px rgba(255, 215, 0, 0.4);
+  box-shadow: var(--shadow-lg);
   color: #000000;
 }
 
 .neon-button:focus-visible {
-  outline: 3px solid #000000;
-  outline-offset: 3px;
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 .glass-button {
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px);
+  background: transparent;
   border: 2px solid var(--primary);
   color: var(--text-primary);
-  border-radius: 12px;
-  font-weight: 600;
+  border-radius: 8px;
+  font-weight: 500;
   font-size: clamp(0.875rem, 1.5vw, 1rem);
-  transition: all 0.3s ease;
+  padding: 10px 22px;
+  transition: all 0.2s ease;
 }
 
 .glass-button:hover {
   background: var(--primary);
   color: #000000;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* CARDS SIMPLIFIÉES */
+.glass-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
 }
 
-.glass-button:focus-visible {
-  outline: 3px solid #000000;
-  outline-offset: 3px;
-}
-
-/* Effet ripple pour les boutons - JAUNE */
-.ripple-effect {
-  position: relative;
-  overflow: hidden;
-}
-
-.ripple-effect::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 215, 0, 0.4);
-  transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-}
-
-.ripple-effect:active::before {
-  width: 300px;
-  height: 300px;
-}
-
-/* Animations de texte - EFFET NEON JAUNE */
+/* SUPPRESSION DES EFFETS NEON ET SUBRILLANCE */
 .neon-text {
-  text-shadow: 
-    0 0 10px #FFD700,
-    0 0 20px #FFD700,
-    0 0 30px #FFD700,
-    0 0 40px #FFD700;
-  animation: neon-glow-yellow 2s ease-in-out infinite alternate;
+  /* Pas d'effet neon, juste la couleur jaune */
+  color: var(--text-heading);
+  font-weight: 600;
 }
 
-@keyframes neon-glow-yellow {
-  from {
-    text-shadow: 
-      0 0 10px #FFD700,
-      0 0 20px #FFD700,
-      0 0 30px #FFD700;
-  }
-  to {
-    text-shadow: 
-      0 0 20px #FFF200,
-      0 0 30px #FFF200,
-      0 0 40px #FFF200,
-      0 0 50px #FFF200;
-  }
-}
-
-/* Animation de typing - CURSEUR JAUNE */
+/* Animation de typing simplifiée */
 .blinking-cursor {
   animation: blink 1s infinite;
   color: var(--primary);
@@ -328,139 +257,101 @@ p {
   51%, 100% { opacity: 0; }
 }
 
-/* Animations de survol */
+/* Animations de survol douces */
 .hover-lift {
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .hover-lift:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
 
-/* Éléments flottants pour le fond - TONS JAUNES */
+/* Éléments flottants subtils */
 .floating-element {
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  50% { transform: translateY(-15px); }
 }
 
-/* Gradients adaptés aux thèmes - JAUNE/BLANC/NOIR */
+/* Gradients simples */
 .hero-gradient {
   background: linear-gradient(135deg, 
     var(--background) 0%,
-    var(--muted) 50%,
+    var(--muted) 30%,
     var(--background) 100%);
-}
-
-/* Gradient spécial jaune pour sections importantes */
-.yellow-gradient {
-  background: linear-gradient(135deg, 
-    #FFD700 0%,
-    #FFF200 50%,
-    #FFED4A 100%);
-}
-
-.yellow-gradient-dark {
-  background: linear-gradient(135deg, 
-    #000000 0%,
-    #1A1A1A 50%,
-    #333333 100%);
 }
 
 /* Animation pour les compteurs */
 .counter-animation {
-  animation: countUp 2s ease-out forwards;
+  animation: countUp 1.5s ease-out forwards;
 }
 
 @keyframes countUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Cards de services avec thème JAUNE */
+/* Cards de services simplifiées */
 .service-card {
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.2), transparent);
-  transform: rotate(45deg);
-  transition: all 0.5s ease;
-  opacity: 0;
+.service-card:hover {
+  border-color: var(--primary);
 }
 
-.service-card:hover::before {
-  opacity: 1;
-  animation: shimmer-yellow 1.5s ease-in-out;
-}
-
-@keyframes shimmer-yellow {
-  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-}
-
-/* Amélioration du focus - CONTOUR NOIR/JAUNE */
+/* Focus amélioré */
 *:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-.dark *:focus-visible {
-  outline: 2px solid #FFF200;
-}
-
-/* Styles pour les formulaires - JAUNE */
+/* Formulaires */
 .form-input {
   background: var(--input);
-  backdrop-filter: blur(8px);
   border: 2px solid var(--border);
-  border-radius: 8px;
+  border-radius: 6px;
   color: var(--text-primary);
   font-size: clamp(1rem, 2vw, 1.125rem);
   padding: 12px 16px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 .form-input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
   background: var(--card);
   outline: none;
 }
 
 .form-input::placeholder {
-  color: var(--text-subtle);
+  color: var(--text-muted);
 }
 
-/* Styles pour la navigation - JAUNE */
+/* Navigation */
 .nav-link {
   position: relative;
-  overflow: hidden;
   font-size: clamp(0.875rem, 1.5vw, 1rem);
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .nav-link::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
   background: var(--primary);
-  transition: width 0.3s ease;
+  transition: width 0.2s ease;
 }
 
 .nav-link:hover::before,
@@ -468,21 +359,15 @@ p {
   width: 100%;
 }
 
-.nav-link:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-/* Animation d'apparition */
+/* Animation d'apparition douce */
 .fade-up {
-  animation: fadeUp 0.8s ease-out forwards;
+  animation: fadeUp 0.6s ease-out forwards;
 }
 
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -490,38 +375,24 @@ p {
   }
 }
 
-/* Mode sombre spécial pour les images */
-.dark img {
-  filter: brightness(0.9) contrast(1.1);
-}
-
-.dark .glass-card {
-  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 242, 0, 0.1);
-}
-
-/* Responsive design avec tailles minimum */
+/* Responsive design */
 @media (max-width: 768px) {
-  .neon-text {
-    font-size: 2.5rem;
-  }
-  
-  .glass-card {
-    backdrop-filter: blur(12px);
-  }
-  
   .floating-element {
     display: none;
   }
   
-  /* Amélioration des boutons sur mobile */
   .neon-button, .glass-button {
     min-height: 44px;
     min-width: 44px;
     padding: 12px 20px;
   }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
 }
 
-/* Amélioration pour les utilisateurs avec vestibular disorders */
+/* Préférences utilisateur */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -529,36 +400,68 @@ p {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
   
   .floating-element,
-  .blinking-cursor,
-  .neon-text {
+  .blinking-cursor {
     animation: none !important;
   }
 }
 
-/* Amélioration du contraste pour les utilisateurs avec troubles visuels */
+/* Contraste élevé */
 @media (prefers-contrast: high) {
   :root {
-    --text-primary: #000000;
-    --text-secondary: #1A1A1A;
     --border: #000000;
+    --text-primary: #000000;
   }
   
   .dark {
-    --text-primary: #FFFFFF;
-    --text-secondary: #F0F0F0;
     --border: #FFFFFF;
+    --text-primary: #FFFFFF;
   }
 }
 
-/* Support pour la taille de police système */
-@media (prefers-reduced-data: reduce) {
-  .glass-effect,
-  .glass-card {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-  }
+/* Styles spéciaux pour sections */
+.section-light {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.section-muted {
+  background-color: var(--muted);
+  color: var(--text-primary);
+}
+
+/* Headers avec hiérarchie claire */
+.page-title {
+  color: var(--text-heading);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  color: var(--text-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  color: var(--text-heading);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Badges et labels */
+.badge-yellow {
+  background-color: var(--primary);
+  color: #000000;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
 }
